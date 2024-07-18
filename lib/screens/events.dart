@@ -33,7 +33,7 @@ class Events extends StatelessWidget {
                           text: "2024, March",
                           textStyle: KTextStyles().normal(
                               fontSize: 17, fontWeight: FontWeight.bold)),
-                      Icon(CupertinoIcons.chevron_down)
+                      const Icon(CupertinoIcons.chevron_down)
                     ],
                   ),
                 ),
@@ -47,7 +47,7 @@ class Events extends StatelessWidget {
                         BoxShadow(
                             color: KColors.kGrey.withOpacity(.5),
                             blurRadius: 0.5,
-                            offset: Offset(0.0, 0.75))
+                            offset: const Offset(0.0, 0.75))
                       ]),
                   padding: EdgeInsets.only(
                       bottom: kHeight(.01),
@@ -59,9 +59,9 @@ class Events extends StatelessWidget {
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         shrinkWrap: true,
-                        padding: EdgeInsets.all(0),
+                        padding: const EdgeInsets.all(0),
                         itemBuilder: (context, index) {
-                          return DateBox();
+                          return const DateBox();
                         },
                         separatorBuilder: (context, index) => widthBox(.02),
                         itemCount: 19),
@@ -118,7 +118,7 @@ class Events extends StatelessWidget {
                                     textColor: KColors.kBlack)),
                           ],
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
@@ -158,7 +158,7 @@ class Events extends StatelessWidget {
                           height: kHeight(.08),
                           width: kWidth(.8),
                           decoration: BoxDecoration(
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(color: KColors.kGrey, blurRadius: 5)
                               ],
                               color: KColors.kWhite,
@@ -260,8 +260,8 @@ class Events extends StatelessWidget {
                     heightBox(.015),
                     Row(
                       children: [
-                        Icon(Icons.more_vert_sharp),
-                        Spacer(),
+                        const Icon(Icons.more_vert_sharp),
+                        const Spacer(),
                         CustomText(
                             text: "12", textStyle: KTextStyles().normal()),
                         widthBox(.005),

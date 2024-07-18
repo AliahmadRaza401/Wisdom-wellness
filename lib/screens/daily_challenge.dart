@@ -1,5 +1,5 @@
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:wisdom_and_wellness/screens/daily_challenge_Controller.dart';
+import 'package:wisdom_and_wellness/screens/daily_challenge_controller.dart';
 import 'package:wisdom_and_wellness/widgets/widgets_imports.dart';
 
 class DailyChallenge extends StatelessWidget {
@@ -13,7 +13,7 @@ class DailyChallenge extends StatelessWidget {
       bottomNavigationBar: Container(
         padding: EdgeInsets.only(top: kHeight(.02)),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.vertical(
+          borderRadius: const BorderRadius.vertical(
               top: Radius.circular(16.0)), // Adjust border radius as needed
           color: Colors.white, // Adjust background color as needed
           boxShadow: [
@@ -21,7 +21,7 @@ class DailyChallenge extends StatelessWidget {
               color: Colors.grey.withOpacity(0.5),
               spreadRadius: 2,
               blurRadius: 5,
-              offset: Offset(0, 3), // changes position of shadow
+              offset: const Offset(0, 3), // changes position of shadow
             ),
           ],
         ),
@@ -120,7 +120,7 @@ class DailyChallenge extends StatelessWidget {
                   child: ListView.separated(
                       scrollDirection: Axis.horizontal,
                       shrinkWrap: true,
-                      padding: EdgeInsets.all(0),
+                      padding: const EdgeInsets.all(0),
                       itemBuilder: (context, index) {
                         return CategoryBox(
                           title: dailyChallengeController.user[index]["type"],
@@ -135,13 +135,13 @@ class DailyChallenge extends StatelessWidget {
                 Obx(() {
                   switch (dailyChallengeController.selectedIndex.value) {
                     case 0:
-                      return DailyDataWidget();
+                      return const DailyDataWidget();
                     case 1:
-                      return WeeklyDataWidget();
+                      return const WeeklyDataWidget();
                     case 2:
-                      return MonthlyDataWidget();
+                      return const MonthlyDataWidget();
                     default:
-                      return DailyDataWidget();
+                      return const DailyDataWidget();
                   }
                 }),
                 heightBox(.1),
@@ -168,7 +168,7 @@ class DailyDataWidget extends StatelessWidget {
             height: kHeight(.35),
             width: kWidth(.9),
             decoration: BoxDecoration(
-                color: Color(0xffD0E6A6),
+                color: const Color(0xffD0E6A6),
                 borderRadius: BorderRadius.circular(kWidth(.04))),
             child: Column(
               children: [
@@ -210,7 +210,7 @@ class DailyDataWidget extends StatelessWidget {
                         ],
                       ),
                       circularStrokeCap: CircularStrokeCap.round,
-                      progressColor: Color(0xffF2707A),
+                      progressColor: const Color(0xffF2707A),
                       backgroundColor: KColors.kWhite,
                     ),
                     widthBox(.06),
@@ -249,7 +249,7 @@ class DailyDataWidget extends StatelessWidget {
                 height: kHeight(.225),
                 width: kWidth(.43),
                 decoration: BoxDecoration(
-                    color: Color(0xffD0E6A6),
+                    color: const Color(0xffD0E6A6),
                     borderRadius: BorderRadius.circular(kWidth(.04))),
                 padding: EdgeInsets.all(
                   kWidth(.04),
@@ -283,13 +283,13 @@ class DailyDataWidget extends StatelessWidget {
                         ],
                       ),
                       circularStrokeCap: CircularStrokeCap.round,
-                      progressColor: Color(0xffF2707A),
+                      progressColor: const Color(0xffF2707A),
                       backgroundColor: KColors.kWhite,
                     ),
                   ],
                 ),
               ),
-              PercentBox(),
+              const PercentBox(),
             ],
           ),
         ],
@@ -312,7 +312,7 @@ class WeeklyDataWidget extends StatelessWidget {
             height: kHeight(.35),
             width: kWidth(.9),
             decoration: BoxDecoration(
-                color: Color(0xffD0E6A6),
+                color: const Color(0xffD0E6A6),
                 borderRadius: BorderRadius.circular(kWidth(.04))),
             child: Column(
               children: [
@@ -354,7 +354,7 @@ class WeeklyDataWidget extends StatelessWidget {
                         ],
                       ),
                       circularStrokeCap: CircularStrokeCap.round,
-                      progressColor: Color(0xffD48A73),
+                      progressColor: const Color(0xffD48A73),
                       backgroundColor: KColors.kWhite,
                     ),
                     widthBox(.1),
@@ -405,16 +405,16 @@ class WeeklyDataWidget extends StatelessWidget {
           heightBox(.02),
           GridView.builder(
             shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            padding: EdgeInsets.all(0),
+            physics: const NeverScrollableScrollPhysics(),
+            padding: const EdgeInsets.all(0),
             itemCount: 4,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 0.9,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10),
             itemBuilder: (context, index) {
-              return PercentBox();
+              return const PercentBox();
             },
           )
         ],
@@ -437,7 +437,7 @@ class MonthlyDataWidget extends StatelessWidget {
             height: kHeight(.35),
             width: kWidth(.9),
             decoration: BoxDecoration(
-                color: Color(0xffD0E6A6),
+                color: const Color(0xffD0E6A6),
                 borderRadius: BorderRadius.circular(kWidth(.04))),
             child: Column(
               children: [
@@ -479,7 +479,7 @@ class MonthlyDataWidget extends StatelessWidget {
                         ],
                       ),
                       circularStrokeCap: CircularStrokeCap.round,
-                      progressColor: Color(0xffD48A73),
+                      progressColor: const Color(0xffD48A73),
                       backgroundColor: KColors.kWhite,
                     ),
                     widthBox(.1),
@@ -515,15 +515,15 @@ class MonthlyDataWidget extends StatelessWidget {
           heightBox(.02),
           GridView.builder(
             shrinkWrap: true,
-            padding: EdgeInsets.all(0),
+            padding: const EdgeInsets.all(0),
             itemCount: 4,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 0.9,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10),
             itemBuilder: (context, index) {
-              return PercentBox();
+              return const PercentBox();
             },
           )
         ],
@@ -581,7 +581,7 @@ class PercentBox extends StatelessWidget {
       height: kHeight(.225),
       width: kWidth(.43),
       decoration: BoxDecoration(
-          color: Color(0xffD0E6A6),
+          color: const Color(0xffD0E6A6),
           borderRadius: BorderRadius.circular(kWidth(.04))),
       padding: EdgeInsets.all(
         kWidth(.04),
@@ -626,7 +626,7 @@ class PercentBox extends StatelessWidget {
                 ],
               ),
               circularStrokeCap: CircularStrokeCap.round,
-              progressColor: Color(0xffF2707A),
+              progressColor: const Color(0xffF2707A),
               backgroundColor: KColors.kWhite,
             ),
           ),

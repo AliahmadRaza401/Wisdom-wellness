@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:wisdom_and_wellness/widgets/widgets_imports.dart';
 
 class EventSearch extends StatelessWidget {
@@ -53,7 +52,7 @@ class EventSearch extends StatelessWidget {
               ),
             ),
             heightBox(.02),
-            ForumsBox(),
+            const ForumsBox(),
             heightBox(.02),
             Image.asset("assets/images/searchpage.png")
           ],
@@ -124,8 +123,8 @@ class ForumsBox extends StatelessWidget {
                   ),
                 ],
               ),
-              Spacer(),
-              Icon(Icons.more_horiz)
+              const Spacer(),
+              const Icon(Icons.more_horiz)
             ],
           ),
         ),
@@ -142,7 +141,7 @@ class ForumsBox extends StatelessWidget {
         heightBox(.02),
         Row(
           children: [
-            Icon(
+            const Icon(
               Icons.favorite,
               color: KColors.kRed,
             ),
@@ -158,7 +157,7 @@ class ForumsBox extends StatelessWidget {
             CustomText(
                 text: "22 comments",
                 textStyle: KTextStyles().normal(fontSize: 12)),
-            Spacer(),
+            const Spacer(),
             Image.asset(
               "assets/images/users.png",
               height: kHeight(.04),

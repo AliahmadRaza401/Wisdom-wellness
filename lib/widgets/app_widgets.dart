@@ -2,7 +2,7 @@ import 'widgets_imports.dart';
 
 class KRadio<T> extends StatelessWidget {
   const KRadio({
-    Key? key,
+    super.key,
     required this.value,
     required this.title,
     this.groupValue,
@@ -10,7 +10,7 @@ class KRadio<T> extends StatelessWidget {
     this.fontSize = 14,
     this.onChanged,
     this.color = KColors.kPrimary,
-  }) : super(key: key);
+  });
   final Color color;
   final String title;
   final T value;
@@ -41,8 +41,8 @@ class KRadio<T> extends StatelessWidget {
         activeColor: KColors.kPrimary,
         groupValue: groupValue,
         onChanged: onChanged,
-        fillColor: WidgetStatePropertyAll(KColors.kBlack),
-        overlayColor: WidgetStatePropertyAll(KColors.kBlack),
+        fillColor: const WidgetStatePropertyAll(KColors.kBlack),
+        overlayColor: const WidgetStatePropertyAll(KColors.kBlack),
       ),
     );
   }
@@ -50,11 +50,11 @@ class KRadio<T> extends StatelessWidget {
 
 class KCheckList<T> extends StatelessWidget {
   const KCheckList({
-    Key? key,
+    super.key,
     required this.value,
     required this.title,
     this.onChanged,
-  }) : super(key: key);
+  });
 
   final bool value;
   final String title;
@@ -63,7 +63,7 @@ class KCheckList<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CheckboxListTile(
-      fillColor: WidgetStatePropertyAll(KColors.kPrimary),
+      fillColor: const WidgetStatePropertyAll(KColors.kPrimary),
       activeColor: KColors.kWhite,
       controlAffinity: ListTileControlAffinity.leading,
       contentPadding: EdgeInsets.zero,
@@ -81,10 +81,10 @@ class KCheckList<T> extends StatelessWidget {
 
 class KLoadingOverlay extends StatelessWidget {
   const KLoadingOverlay({
-    Key? key,
+    super.key,
     required this.isLoading,
     required this.child,
-  }) : super(key: key);
+  });
 
   final RxBool isLoading;
   final Widget child;

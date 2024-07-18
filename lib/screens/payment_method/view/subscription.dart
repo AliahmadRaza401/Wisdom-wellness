@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:wisdom_and_wellness/widgets/app_widgets.dart';
 import 'package:wisdom_and_wellness/widgets/widgets_imports.dart';
 
@@ -120,7 +119,7 @@ class Subscription extends StatelessWidget {
               heightBox(.02),
               SizedBox(
                 width: kWidth(.3),
-                child: KRadio(
+                child: const KRadio(
                   value: false,
                   title: "Card Pay",
                   color: KColors.kBlack,
@@ -128,7 +127,7 @@ class Subscription extends StatelessWidget {
               ),
               SizedBox(
                 width: kWidth(.3),
-                child: KRadio(
+                child: const KRadio(
                   value: false,
                   title: "Apple Pay",
                   color: KColors.kBlack,
@@ -142,7 +141,7 @@ class Subscription extends StatelessWidget {
                   Get.toNamed("/paymentoption");
                 },
               ),
-              Spacer(),
+              const Spacer(),
               Divider(
                 thickness: 4,
                 color: KColors.kBlack,

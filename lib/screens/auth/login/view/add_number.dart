@@ -93,7 +93,7 @@ class AddNumber extends StatelessWidget {
             heightBox(.02),
             SizedBox(
                 width: kWidth(.7),
-                child: KRadio(
+                child: const KRadio(
                     value: false,
                     title: "Terms of Service and Privacy Policy")),
             heightBox(.02),
@@ -104,7 +104,7 @@ class AddNumber extends StatelessWidget {
                 Get.toNamed("/verification");
               },
             ),
-            Spacer(),
+            const Spacer(),
             Divider(
               thickness: 4,
               color: KColors.kBlack,

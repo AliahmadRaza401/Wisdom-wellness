@@ -3,7 +3,7 @@ import 'package:wisdom_and_wellness/widgets/app_widgets.dart';
 import '../../../../widgets/widgets_imports.dart';
 
 class Signup extends StatelessWidget {
-  Signup({Key? key}) : super(key: key);
+  Signup({super.key});
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -21,7 +21,10 @@ class Signup extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               heightBox(.08),
-              KAppBar(title: "WISDOM"),
+              KAppBar(
+                title: "WISDOM",
+                func: () {},
+              ),
               heightBox(.08),
               Align(
                 alignment: Alignment.centerLeft,
@@ -35,25 +38,25 @@ class Signup extends StatelessWidget {
               heightBox(.02),
               CustomTextField(
                 hasSuffix: false,
-                themeColor: Color(0xff949494),
+                themeColor: const Color(0xff949494),
                 controller: nameController,
                 label: "Enter Full Name",
                 hintText: "",
                 keyboardType: TextInputType.text,
-                suffixIcon: Icon(null),
-                prefixIcon: Icon(Icons.message),
+                suffixIcon: const Icon(null),
+                prefixIcon: const Icon(Icons.message),
                 img: 'assets/images/user.png',
               ),
               heightBox(.02),
               CustomTextField(
                 hasSuffix: false,
-                themeColor: Color(0xff949494),
+                themeColor: const Color(0xff949494),
                 controller: emailController,
                 label: "Enter Your Email",
                 hintText: "",
                 keyboardType: TextInputType.text,
-                suffixIcon: Icon(null),
-                prefixIcon: Icon(Icons.message),
+                suffixIcon: const Icon(null),
+                prefixIcon: const Icon(Icons.message),
                 img: 'assets/images/mail.png',
               ),
               heightBox(.02),
@@ -61,13 +64,13 @@ class Signup extends StatelessWidget {
                 suffixIconColor: KColors.kGrey,
                 isCPassword: true,
                 isPassword: true,
-                themeColor: Color(0xff949494),
+                themeColor: const Color(0xff949494),
                 controller: passwordController,
                 label: "Enter Your Password",
                 hintText: "",
                 keyboardType: TextInputType.visiblePassword,
-                suffixIcon: Icon(null),
-                prefixIcon: Icon(Icons.message),
+                suffixIcon: const Icon(null),
+                prefixIcon: const Icon(Icons.message),
                 img: 'assets/images/lock.png',
               ),
               heightBox(.02),
@@ -75,27 +78,29 @@ class Signup extends StatelessWidget {
                 suffixIconColor: KColors.kGrey,
                 isCPassword: true,
                 isPassword: true,
-                themeColor: Color(0xff949494),
+                themeColor: const Color(0xff949494),
                 controller: confirmPasswordController,
                 label: "Confirm Password",
                 hintText: "",
                 keyboardType: TextInputType.visiblePassword,
-                suffixIcon: Icon(null),
-                prefixIcon: Icon(Icons.message),
+                suffixIcon: const Icon(null),
+                prefixIcon: const Icon(Icons.message),
                 img: 'assets/images/lock.png',
               ),
               heightBox(.02),
               PrimaryButton(
                 width: .9,
                 text: "Signup",
-                function: () {},
+                function: () {
+                  Get.toNamed("/addnumber");
+                },
               ),
               heightBox(
                 .02,
               ),
               SizedBox(
                   width: kWidth(.7),
-                  child: KRadio(
+                  child: const KRadio(
                       value: false,
                       title: "Terms of Service and Privacy Policy")),
               heightBox(
@@ -110,7 +115,7 @@ class Signup extends StatelessWidget {
                   Get.toNamed("/login");
                 },
               ),
-              Spacer(),
+              const Spacer(),
               Divider(
                 thickness: 4,
                 color: KColors.kBlack,

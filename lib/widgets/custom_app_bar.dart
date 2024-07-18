@@ -9,7 +9,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double fontSize;
 
   const CustomAppBar({
-    Key? key,
+    super.key,
     required this.title,
     required this.actions,
     this.backgroundColor = KColors.kWhite,
@@ -19,7 +19,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.centerTitle = true,
     this.elevation = 0,
     this.fontSize = 20.0,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

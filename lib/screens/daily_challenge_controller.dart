@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:wisdom_and_wellness/widgets/widgets_imports.dart';
 
 class DailyChallengeController extends GetxController {

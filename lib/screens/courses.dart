@@ -47,14 +47,14 @@ class Courses extends StatelessWidget {
                 heightBox(.02),
                 ListView.separated(
                     shrinkWrap: true,
-                    padding: EdgeInsets.all(0),
-                    physics: NeverScrollableScrollPhysics(),
+                    padding: const EdgeInsets.all(0),
+                    physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) {
                       return GestureDetector(
                           onTap: () {
                             Get.toNamed("/dailychallenge");
                           },
-                          child: MonthlyFreeChallenge());
+                          child: const MonthlyFreeChallenge());
                     },
                     separatorBuilder: (context, index) => heightBox(.02),
                     itemCount: 3),
@@ -90,10 +90,10 @@ class Courses extends StatelessWidget {
                   width: kWidth(.9),
                   child: ListView.separated(
                       shrinkWrap: true,
-                      padding: EdgeInsets.all(0),
+                      padding: const EdgeInsets.all(0),
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
-                        return PaidCourse();
+                        return const PaidCourse();
                       },
                       separatorBuilder: (context, index) => widthBox(.04),
                       itemCount: 4),
@@ -212,7 +212,7 @@ class MonthlyFreeChallenge extends StatelessWidget {
               )
             ],
           ),
-          Spacer(),
+          const Spacer(),
           Image.asset(
             "assets/images/chart.png",
             height: kHeight(.05),

@@ -1,15 +1,14 @@
-import 'package:get/get.dart';
 import 'package:wisdom_and_wellness/widgets/widgets_imports.dart';
 
 class Onboarding extends StatefulWidget {
-  const Onboarding({Key? key}) : super(key: key);
+  const Onboarding({super.key});
 
   @override
-  _OnboardingState createState() => _OnboardingState();
+  OnboardingState createState() => OnboardingState();
 }
 
-class _OnboardingState extends State<Onboarding> {
-  PageController _pageController = PageController();
+class OnboardingState extends State<Onboarding> {
+  final PageController _pageController = PageController();
   RxInt currentPageIndex = RxInt(0);
 
   @override
@@ -33,41 +32,42 @@ class _OnboardingState extends State<Onboarding> {
             buildPage(
               index: 0,
               image: "assets/images/onboarding1.jpg",
-              text: "Embrace holistic wellness through exclusive content",
-              lastPage: false,
-              context: context,
-              nextPage: () {
-                _pageController.nextPage(
-                  duration: Duration(milliseconds: 300),
-                  curve: Curves.ease,
-                );
-              },
-            ),
-            buildPage(
-              index: 1,
-              image: "assets/images/onboarding2.jpg",
               text: "Discover a community of growth, love and accountability",
               lastPage: false,
               context: context,
               nextPage: () {
                 _pageController.nextPage(
-                  duration: Duration(milliseconds: 300),
+                  duration: const Duration(milliseconds: 300),
                   curve: Curves.ease,
                 );
               },
+              heading: 'COMMUNITY',
+            ),
+            buildPage(
+              index: 1,
+              image: "assets/images/onboarding2.jpg",
+              text: "Embrace holistic wellness through exclusive content",
+              lastPage: false,
+              context: context,
+              nextPage: () {
+                _pageController.nextPage(
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.ease,
+                );
+              },
+              heading: 'EXCLUSIVE CONTENT',
             ),
             buildPage(
               index: 2,
               image: "assets/images/onboarding3.jpg",
               text:
-                  "Enjoy challenges courses and access our calendar to stay updated ",
+                  "Enjoy challenges courses and access our calendar to stay updated",
               lastPage: true,
               context: context,
               nextPage: () {
-                // Navigate to the next screen or perform any action on last page
-                // Example using GetX navigation
                 Get.toNamed("/login");
               },
+              heading: 'CHALLENGES & COURSES',
             ),
           ],
         ),
@@ -80,6 +80,7 @@ class _OnboardingState extends State<Onboarding> {
     required BuildContext context,
     required String image,
     required String text,
+    required String heading,
     required bool lastPage,
     required VoidCallback nextPage,
   }) {
@@ -88,7 +89,7 @@ class _OnboardingState extends State<Onboarding> {
         Container(
           height: context.height,
           width: context.width,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.bottomLeft,
               end: Alignment.topRight,
@@ -118,21 +119,32 @@ class _OnboardingState extends State<Onboarding> {
                 Image.asset(
                   "assets/images/logo.png",
                   height: kHeight(.06),
+                  color: KColors.kWhite,
                 ),
                 heightBox(.3),
+                CustomText(
+                  alignText: TextAlign.center,
+                  maxLines: 1,
+                  text: heading,
+                  textStyle: KTextStyles().normal(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    textColor: KColors.kWhite,
+                  ),
+                ),
+                heightBox(.01),
                 CustomText(
                   alignText: TextAlign.center,
                   maxLines: 2,
                   text: text,
                   textStyle: KTextStyles().normal(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
                     textColor: KColors.kWhite,
                   ),
                 ),
                 heightBox(.08),
                 buildPageIndicator(context, index),
-                Spacer(), // Spacer between dots and buttons
+                const Spacer(), // Spacer between dots and buttons
                 if (lastPage)
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -160,7 +172,7 @@ class _OnboardingState extends State<Onboarding> {
                     text: "Continue",
                     function: nextPage,
                   ),
-                Spacer(),
+                const Spacer(),
                 Divider(
                   thickness: 4,
                   color: KColors.kBlack,
@@ -189,7 +201,7 @@ class _OnboardingState extends State<Onboarding> {
 
   Widget buildDot({required bool active}) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 4),
+      margin: const EdgeInsets.symmetric(horizontal: 4),
       width: 8,
       height: 8,
       decoration: BoxDecoration(

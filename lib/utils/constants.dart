@@ -117,9 +117,11 @@ class CTextField extends StatelessWidget {
 
 class KAppBar extends StatelessWidget {
   final String title;
+  final VoidCallback func;
   const KAppBar({
     super.key,
     required this.title,
+    required this.func,
   });
 
   @override
@@ -134,7 +136,7 @@ class KAppBar extends StatelessWidget {
                 Get.back();
               },
               child: CircleAvatar(
-                backgroundColor: Color(0xffE0E0E0),
+                backgroundColor: const Color(0xffE0E0E0),
                 radius: kHeight(.02),
                 child: const Icon(
                   Icons.arrow_back,
@@ -145,13 +147,16 @@ class KAppBar extends StatelessWidget {
             "assets/images/logo.png",
             height: kHeight(.04),
           ),
-          CircleAvatar(
-            backgroundColor: Color(0xffE0E0E0),
-            radius: kHeight(.02),
-            child: Image.asset(
-              "assets/images/x-close.png",
-              height: kHeight(.03),
-              color: KColors.kBlack,
+          GestureDetector(
+            onTap: func,
+            child: CircleAvatar(
+              backgroundColor: const Color(0xffE0E0E0),
+              radius: kHeight(.02),
+              child: Image.asset(
+                "assets/images/x-close.png",
+                height: kHeight(.03),
+                color: KColors.kBlack,
+              ),
             ),
           )
         ],

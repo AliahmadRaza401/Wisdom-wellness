@@ -6,9 +6,10 @@ class PrimaryButton extends StatelessWidget {
   final double width;
   final double height;
   final double borderRadius;
-  final Color color;
+  final Color color, tcolor;
   final EdgeInsets padding;
 
+  // ignore: use_super_parameters
   const PrimaryButton({
     Key? key,
     required this.text,
@@ -18,6 +19,7 @@ class PrimaryButton extends StatelessWidget {
     this.height = .054,
     this.borderRadius = .03,
     this.padding = EdgeInsets.zero,
+    this.tcolor = KColors.kWhite,
   }) : super(key: key);
 
   @override
@@ -37,7 +39,9 @@ class PrimaryButton extends StatelessWidget {
         child: Center(
           child: CustomText(
             text: text,
-            textStyle: KTextStyles().buttonStyle(),
+            textStyle: KTextStyles().buttonStyle(
+              textColor: tcolor,
+            ),
           ),
         ),
       ),
@@ -55,7 +59,7 @@ class SecondaryButton extends StatelessWidget {
   final EdgeInsets padding;
 
   const SecondaryButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.function,
     this.color = KColors.kPrimary,
@@ -63,7 +67,7 @@ class SecondaryButton extends StatelessWidget {
     this.height = .054,
     this.borderRadius = .03,
     this.padding = EdgeInsets.zero,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +106,7 @@ class IconTextButton extends StatelessWidget {
   final EdgeInsets padding;
 
   const IconTextButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.icon,
     required this.function,
@@ -112,7 +116,7 @@ class IconTextButton extends StatelessWidget {
     this.borderRadius = .054,
     this.elevation = 0,
     this.padding = EdgeInsets.zero,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -157,7 +161,7 @@ class KIconButton extends StatelessWidget {
   final EdgeInsets padding;
 
   const KIconButton({
-    Key? key,
+    super.key,
     required this.icon,
     required this.function,
     this.color = KColors.kPrimary,
@@ -166,7 +170,7 @@ class KIconButton extends StatelessWidget {
     this.borderRadius = .054,
     this.elevation = 0,
     this.padding = EdgeInsets.zero,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -201,7 +205,7 @@ class OutlineButton extends StatelessWidget {
   final EdgeInsets padding;
 
   const OutlineButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.function,
     this.color = KColors.kPrimary,
@@ -210,7 +214,7 @@ class OutlineButton extends StatelessWidget {
     this.borderRadius = .054,
     this.elevation = 0,
     this.padding = EdgeInsets.zero,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -253,7 +257,7 @@ class OutlineIconTextButton extends StatelessWidget {
   final EdgeInsets padding;
 
   const OutlineIconTextButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.icon,
     required this.function,
@@ -263,7 +267,7 @@ class OutlineIconTextButton extends StatelessWidget {
     this.borderRadius = .054,
     this.elevation = 0,
     this.padding = EdgeInsets.zero,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -312,7 +316,7 @@ class OutlineIconButton extends StatelessWidget {
   final EdgeInsets padding;
 
   const OutlineIconButton({
-    Key? key,
+    super.key,
     required this.icon,
     required this.function,
     this.color = KColors.kPrimary,
@@ -321,7 +325,7 @@ class OutlineIconButton extends StatelessWidget {
     this.borderRadius = .054,
     this.elevation = 0,
     this.padding = EdgeInsets.zero,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

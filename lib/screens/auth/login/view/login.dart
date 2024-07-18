@@ -1,7 +1,7 @@
 import '../../../../widgets/widgets_imports.dart';
 
 class Login extends StatelessWidget {
-  Login({Key? key}) : super(key: key);
+  Login({super.key});
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -16,7 +16,10 @@ class Login extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               heightBox(.08),
-              KAppBar(title: "WISDOM"),
+              KAppBar(
+                title: "WISDOM",
+                func: () {},
+              ),
               heightBox(.08),
               CustomText(
                   text: "Let’s Login!",
@@ -68,17 +71,12 @@ class Login extends StatelessWidget {
                         fontSize: 13,
                       )),
                   const Spacer(),
-                  GestureDetector(
-                    onTap: () {
-                      Get.toNamed("/addnumber");
-                    },
-                    child: CustomText(
-                        text: "Forgot Password?",
-                        textStyle: KTextStyles().normal(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 13,
-                            textColor: KColors.kPrimary)),
-                  ),
+                  CustomText(
+                      text: "Forgot Password?",
+                      textStyle: KTextStyles().normal(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13,
+                          textColor: KColors.kPrimary)),
                 ],
               ),
               heightBox(.02),
@@ -100,40 +98,45 @@ class Login extends StatelessWidget {
                     )),
               ),
               heightBox(.02),
-              Container(
-                height: kHeight(.06),
-                width: kWidth(.9),
-                decoration: BoxDecoration(
-                  border: Border.all(color: KColors.kGrey.withOpacity(.3)),
-                  borderRadius: BorderRadius.circular(
-                    kWidth(.02),
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      "assets/images/google.png",
-                      height: kHeight(.03),
-                    ),
-                    widthBox(.04),
-                    CustomText(
-                        text: "Sign in with Google",
-                        textStyle: KTextStyles()
-                            .normal(fontSize: 16, fontWeight: FontWeight.w600))
-                  ],
-                ),
-              ),
-              heightBox(.02),
               GestureDetector(
                 onTap: () {
-                  Get.toNamed("/leaderboard");
+                  Get.toNamed("/homescreen");
                 },
                 child: Container(
                   height: kHeight(.06),
                   width: kWidth(.9),
                   decoration: BoxDecoration(
-                    color: Color(0xff1877F2),
+                    border: Border.all(color: KColors.kGrey.withOpacity(.3)),
+                    borderRadius: BorderRadius.circular(
+                      kWidth(.02),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        "assets/images/google.png",
+                        height: kHeight(.03),
+                      ),
+                      widthBox(.04),
+                      CustomText(
+                          text: "Sign in with Google",
+                          textStyle: KTextStyles().normal(
+                              fontSize: 16, fontWeight: FontWeight.w600))
+                    ],
+                  ),
+                ),
+              ),
+              heightBox(.02),
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed("/homescreen");
+                },
+                child: Container(
+                  height: kHeight(.06),
+                  width: kWidth(.9),
+                  decoration: BoxDecoration(
+                    color: const Color(0xff1877F2),
                     borderRadius: BorderRadius.circular(
                       kWidth(.02),
                     ),
@@ -159,7 +162,7 @@ class Login extends StatelessWidget {
               heightBox(.02),
               GestureDetector(
                 onTap: () {
-                  Get.toNamed("/subscription");
+                  Get.toNamed("/homescreen");
                 },
                 child: Container(
                   height: kHeight(.06),
@@ -201,7 +204,7 @@ class Login extends StatelessWidget {
                   },
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Divider(
                 thickness: 4,
                 color: KColors.kBlack,

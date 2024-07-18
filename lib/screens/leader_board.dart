@@ -26,7 +26,7 @@ class LeaderBoard extends StatelessWidget {
                         child: CircleAvatar(
                           backgroundColor: KColors.bgcolor,
                           radius: kHeight(.025),
-                          child: Icon(
+                          child: const Icon(
                             Icons.arrow_back,
                             color: KColors.kBlack,
                           ),
@@ -37,7 +37,7 @@ class LeaderBoard extends StatelessWidget {
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
                             textColor: KColors.kBlack)),
-                    Icon(null),
+                    const Icon(null),
                   ],
                 ),
               ),
@@ -112,7 +112,7 @@ class LeaderBoard extends StatelessWidget {
                           fontSize: 50,
                           textColor: KColors.kBlack,
                           fontWeight: FontWeight.bold)),
-                  Icon(
+                  const Icon(
                     CupertinoIcons.chevron_forward,
                   ),
                 ],
@@ -146,10 +146,10 @@ class LeaderBoard extends StatelessWidget {
               heightBox(.06),
               ListView.separated(
                   shrinkWrap: true,
-                  padding: EdgeInsets.all(0),
-                  physics: NeverScrollableScrollPhysics(),
+                  padding: const EdgeInsets.all(0),
+                  physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
-                    return LeaderBoardTile();
+                    return const LeaderBoardTile();
                   },
                   separatorBuilder: (context, index) => heightBox(.01),
                   itemCount: 4),
@@ -199,7 +199,7 @@ class LeaderBoardTile extends StatelessWidget {
                       .normal(fontSize: 14, fontWeight: FontWeight.bold)),
             ],
           ),
-          Divider(
+          const Divider(
             thickness: 1,
             color: KColors.bgcolor,
           )

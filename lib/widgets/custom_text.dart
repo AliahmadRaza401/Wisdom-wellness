@@ -11,14 +11,14 @@ class CustomText extends StatelessWidget {
   final bool ellipsisText;
 
   const CustomText({
-    Key? key,
+    super.key,
     required this.text,
     required this.textStyle,
     this.alignText = TextAlign.center,
     this.maxLines = 1,
     this.ellipsisText = true,
     this.minFontSize,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

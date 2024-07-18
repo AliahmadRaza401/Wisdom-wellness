@@ -25,7 +25,7 @@ class CustomTextField extends StatelessWidget {
   final String? Function(String?)? function;
 
   const CustomTextField({
-    Key? key,
+    super.key,
     required this.controller,
     required this.label,
     required this.hintText,
@@ -49,7 +49,7 @@ class CustomTextField extends StatelessWidget {
     this.onlyNumber = false,
     this.onlyNumberDash = false,
     required this.img,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -141,7 +141,7 @@ class CustomTextField extends StatelessWidget {
                     )
                   : null,
               isDense: true,
-              prefixIcon: hasPrefix ? Image.asset(img) : Icon(null),
+              prefixIcon: hasPrefix ? Image.asset(img) : const Icon(null),
               label: Text(label),
               labelStyle: TextStyle(color: themeColor),
               hintText: hintText,

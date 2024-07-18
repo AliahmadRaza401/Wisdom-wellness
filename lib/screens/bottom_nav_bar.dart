@@ -19,22 +19,22 @@ class BottomNavBar extends StatelessWidget {
       body: Obx(() {
         switch (bottomNavController.selectedIndex.value) {
           case 0:
-            return Homescreen();
+            return const Homescreen();
           case 1:
-            return Feeds();
+            return const Forums();
           case 2:
-            return Events();
+            return const Feeds();
           case 3:
-            return Forums();
+            return const Events();
           case 4:
-            return Courses();
+            return const Courses();
           case 5:
-            return ProfileHome();
+            return const ProfileHome();
           default:
-            return HomeSeasonBox();
+            return const HomeSeasonBox();
         }
       }),
-      bottomNavigationBar: Obx(() => Container(
+      bottomNavigationBar: Obx(() => SizedBox(
             height: kHeight(.08),
             child: BottomNavigationBar(
               items: <BottomNavigationBarItem>[

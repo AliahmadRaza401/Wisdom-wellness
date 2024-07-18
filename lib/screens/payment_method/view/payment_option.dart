@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:wisdom_and_wellness/widgets/widgets_imports.dart';
 
 class PaymentOption extends StatelessWidget {
@@ -22,7 +21,7 @@ class PaymentOption extends StatelessWidget {
                   child: CircleAvatar(
                     backgroundColor: KColors.bgcolor,
                     radius: kHeight(.02),
-                    child: Icon(
+                    child: const Icon(
                       Icons.arrow_back,
                       color: KColors.kBlack,
                     ),
@@ -47,7 +46,7 @@ class PaymentOption extends StatelessWidget {
                         text: "Debit /Credit card",
                         textStyle: KTextStyles()
                             .normal(fontSize: 17, fontWeight: FontWeight.bold)),
-                    Icon(CupertinoIcons.chevron_down)
+                    const Icon(CupertinoIcons.chevron_down)
                   ],
                 ),
               ),
@@ -109,7 +108,7 @@ class PaymentOption extends StatelessWidget {
                         text: "Phonepe",
                         textStyle: KTextStyles()
                             .normal(fontSize: 17, fontWeight: FontWeight.bold)),
-                    Spacer(),
+                    const Spacer(),
                     Image.asset(
                       "assets/images/Rupay.png",
                       height: kHeight(.03),
@@ -135,7 +134,7 @@ class PaymentOption extends StatelessWidget {
                         textStyle: KTextStyles().normal(
                             fontSize: 16, fontWeight: FontWeight.bold))),
               ),
-              Spacer(),
+              const Spacer(),
               Divider(
                 thickness: 4,
                 color: KColors.kBlack,

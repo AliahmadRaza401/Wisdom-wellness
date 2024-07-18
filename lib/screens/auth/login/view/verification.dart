@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:pinput/pinput.dart';
 import 'package:wisdom_and_wellness/widgets/widgets_imports.dart';
 
@@ -70,7 +69,7 @@ class Verification extends StatelessWidget {
                           color: KColors.kBlack,
                           fontWeight: FontWeight.w600,
                         ),
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           border: Border(
                               bottom: BorderSide(
                                   color: KColors.kPrimary, width: 2)),
@@ -85,7 +84,9 @@ class Verification extends StatelessWidget {
               PrimaryButton(
                 width: .9,
                 text: "Next Step",
-                function: () {},
+                function: () {
+                  Get.toNamed("/subscription");
+                },
               ),
               heightBox(
                 .02,
@@ -100,7 +101,7 @@ class Verification extends StatelessWidget {
                   Get.toNamed("/");
                 },
               ),
-              Spacer(),
+              const Spacer(),
               Divider(
                 thickness: 4,
                 color: KColors.kBlack,

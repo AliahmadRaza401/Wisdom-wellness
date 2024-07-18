@@ -6,7 +6,7 @@ class ProfileSettings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff333333),
+      backgroundColor: const Color(0xff333333),
       body: SizedBox(
         height: context.height,
         width: context.width,
@@ -23,9 +23,9 @@ class ProfileSettings extends StatelessWidget {
                           Get.back();
                         },
                         child: CircleAvatar(
-                          backgroundColor: Color(0xff3B3B3B),
+                          backgroundColor: const Color(0xff3B3B3B),
                           radius: kHeight(.02),
-                          child: Icon(
+                          child: const Icon(
                             Icons.arrow_back,
                             color: KColors.kWhite,
                           ),
@@ -86,14 +86,14 @@ class ProfileSettings extends StatelessWidget {
                                           textColor: KColors.kWhite)),
                                   Container(
                                     decoration: BoxDecoration(
-                                        color: Color(0xff3B3B3B),
+                                        color: const Color(0xff3B3B3B),
                                         borderRadius:
                                             BorderRadius.circular(kWidth(.02))),
                                     padding: EdgeInsets.symmetric(
                                       horizontal: kWidth(.01),
                                       vertical: kWidth(.02),
                                     ),
-                                    child: Icon(
+                                    child: const Icon(
                                       CupertinoIcons.chevron_forward,
                                       color: KColors.kWhite,
                                     ),
@@ -103,7 +103,7 @@ class ProfileSettings extends StatelessWidget {
                             ],
                           ),
                           heightBox(.02),
-                          Divider(
+                          const Divider(
                             thickness: 0.5,
                             color: KColors.kWhite,
                           )
@@ -126,9 +126,9 @@ class ProfileSettings extends StatelessWidget {
                 padding: EdgeInsets.all(kWidth(.04)),
                 child: Column(
                   children: [
-                    ProfileTile(
+                    const ProfileTile(
                         title: "Account Settings", img: "assets/images/3.png"),
-                    ProfileTile(
+                    const ProfileTile(
                         title: "Privacy Settings", img: "assets/images/9.png"),
                     Row(children: [
                       Image.asset(
@@ -136,29 +136,48 @@ class ProfileSettings extends StatelessWidget {
                         height: kHeight(.03),
                       ),
                       widthBox(.04),
-                      CustomText(
-                          text: "Notification",
-                          textStyle: KTextStyles().normal(
-                              fontSize: 17,
-                              fontWeight: FontWeight.bold,
-                              textColor: KColors.kBlack)),
-                      Spacer(),
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed("/notification");
+                        },
+                        child: CustomText(
+                            text: "Notification",
+                            textStyle: KTextStyles().normal(
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold,
+                                textColor: KColors.kBlack)),
+                      ),
+                      const Spacer(),
                       Switch(
                         trackOutlineColor:
-                            WidgetStatePropertyAll(KColors.bgcolor),
-                        trackColor: WidgetStatePropertyAll(KColors.kPrimary),
-                        thumbColor: WidgetStatePropertyAll(KColors.kWhite),
+                            const WidgetStatePropertyAll(KColors.bgcolor),
+                        trackColor:
+                            const WidgetStatePropertyAll(KColors.kPrimary),
+                        thumbColor:
+                            const WidgetStatePropertyAll(KColors.kWhite),
                         value: false,
                         onChanged: (value) {},
                       )
                     ]),
-                    ProfileTile(
-                        title: "Profile Settings", img: "assets/images/2.png"),
-                    ProfileTile(
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed("/profilehome");
+                      },
+                      child: ProfileTile(
+                          title: "Profile Settings",
+                          img: "assets/images/2.png"),
+                    ),
+                    const ProfileTile(
                         title: "App Preference", img: "assets/images/9.png"),
-                    ProfileTile(
+                    const ProfileTile(
                         title: "Help and Support", img: "assets/images/4.png"),
-                    ProfileTile(title: "Logout", img: "assets/images/7.png"),
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed("/login");
+                      },
+                      child: ProfileTile(
+                          title: "Logout", img: "assets/images/7.png"),
+                    ),
                   ],
                 ),
               ),
@@ -193,8 +212,8 @@ class ProfileTile extends StatelessWidget {
                 fontSize: 17,
                 fontWeight: FontWeight.bold,
                 textColor: KColors.kBlack)),
-        Spacer(),
-        Icon(CupertinoIcons.chevron_forward),
+        const Spacer(),
+        const Icon(CupertinoIcons.chevron_forward),
         heightBox(.07),
       ],
     );

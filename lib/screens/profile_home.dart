@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:wisdom_and_wellness/widgets/widgets_imports.dart';
 
 class ProfileHome extends StatelessWidget {
@@ -8,7 +6,7 @@ class ProfileHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff333333),
+      backgroundColor: const Color(0xff333333),
       body: SizedBox(
         height: context.height,
         width: context.width,
@@ -23,7 +21,7 @@ class ProfileHome extends StatelessWidget {
                       title: "Profile",
                       color: KColors.kWhite,
                       img: "assets/images/edit.png",
-                      bgcolor: Color(0xff3B3B3B),
+                      bgcolor: const Color(0xff3B3B3B),
                     ),
                     heightBox(.04),
                     SizedBox(
@@ -74,41 +72,67 @@ class ProfileHome extends StatelessWidget {
                 padding: EdgeInsets.all(kWidth(.04)),
                 child: Column(
                   children: [
-                    ProfileTile(title: "Messages", img: "assets/images/1.png"),
-                    ProfileTile(title: "Feed Post", img: "assets/images/2.png"),
-                    ProfileTile(
+                    GestureDetector(
+                        onTap: () {
+                          Get.toNamed("/chatnotification");
+                        },
+                        child: ProfileTile(
+                            title: "Messages", img: "assets/images/1.png")),
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed("/feeds");
+                      },
+                      child: const ProfileTile(
+                          title: "Feed Post", img: "assets/images/2.png"),
+                    ),
+                    const ProfileTile(
                         title: "Security & Privacy",
                         img: "assets/images/3.png"),
-                    ProfileTile(title: "Support", img: "assets/images/4.png"),
+                    const ProfileTile(
+                        title: "Support", img: "assets/images/4.png"),
                     GestureDetector(
                         onTap: () {
                           Get.toNamed("/profilesettings");
                         },
-                        child: ProfileTile(
+                        child: const ProfileTile(
                             title: "Settings", img: "assets/images/5.png")),
-                    Row(children: [
-                      Image.asset(
-                        "assets/images/6.png",
-                        height: kHeight(.03),
-                      ),
-                      widthBox(.04),
-                      CustomText(
-                          text: "Notification",
-                          textStyle: KTextStyles().normal(
-                              fontSize: 17,
-                              fontWeight: FontWeight.bold,
-                              textColor: KColors.kBlack)),
-                      Spacer(),
-                      Switch(
-                        trackOutlineColor:
-                            WidgetStatePropertyAll(KColors.bgcolor),
-                        trackColor: WidgetStatePropertyAll(KColors.kPrimary),
-                        thumbColor: WidgetStatePropertyAll(KColors.kWhite),
-                        value: false,
-                        onChanged: (value) {},
-                      )
-                    ]),
-                    ProfileTile(title: "Logout", img: "assets/images/7.png"),
+                    GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () {
+                        Get.toNamed("/notification");
+                      },
+                      child: Row(children: [
+                        Image.asset(
+                          "assets/images/6.png",
+                          height: kHeight(.03),
+                        ),
+                        widthBox(.04),
+                        CustomText(
+                            text: "Notification",
+                            textStyle: KTextStyles().normal(
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold,
+                                textColor: KColors.kBlack)),
+                        const Spacer(),
+                        Switch(
+                          trackOutlineColor:
+                              const WidgetStatePropertyAll(KColors.bgcolor),
+                          trackColor:
+                              const WidgetStatePropertyAll(KColors.kPrimary),
+                          thumbColor:
+                              const WidgetStatePropertyAll(KColors.kWhite),
+                          value: false,
+                          onChanged: (value) {},
+                        )
+                      ]),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed("/login");
+                      },
+                      child: const ProfileTile(
+                          title: "Logout", img: "assets/images/7.png"),
+                    ),
                   ],
                 ),
               ),
@@ -143,8 +167,8 @@ class ProfileTile extends StatelessWidget {
                 fontSize: 17,
                 fontWeight: FontWeight.bold,
                 textColor: KColors.kBlack)),
-        Spacer(),
-        Icon(CupertinoIcons.chevron_forward),
+        const Spacer(),
+        const Icon(CupertinoIcons.chevron_forward),
         heightBox(.07),
       ],
     );

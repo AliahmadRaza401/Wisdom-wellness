@@ -2,14 +2,14 @@ import 'widgets_imports.dart';
 
 class CustomDropdown<T> extends StatelessWidget {
   CustomDropdown({
-    Key? key,
+    super.key,
     required this.items,
     required this.onChanged,
     required this.label,
     this.selectedValue,
     this.width = .45,
     this.hasSearch = false,
-  }) : super(key: key);
+  });
 
   final List<DropdownMenuItem<T>> items;
   final String label;
@@ -70,10 +70,10 @@ class CustomDropdown<T> extends StatelessWidget {
                       color: KColors.kWhite,
                     ),
                     elevation: 4,
-                    scrollbarTheme: ScrollbarThemeData(
-                      radius: const Radius.circular(40),
-                      thickness: MaterialStateProperty.all(6),
-                      thumbVisibility: MaterialStateProperty.all(true),
+                    scrollbarTheme: const ScrollbarThemeData(
+                      radius: Radius.circular(40),
+                      thickness: WidgetStatePropertyAll(6),
+                      thumbVisibility: WidgetStatePropertyAll(true),
                     ),
                   ),
                   autofocus: false,

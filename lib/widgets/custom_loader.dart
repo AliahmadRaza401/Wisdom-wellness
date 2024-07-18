@@ -2,10 +2,10 @@ import '../widgets/widgets_imports.dart';
 
 class CustomLoader extends StatelessWidget {
   const CustomLoader({
-    Key? key,
+    super.key,
     this.isCenter = true,
     this.size = .4,
-  }) : super(key: key);
+  });
   final bool isCenter;
   final double size;
 
@@ -24,10 +24,10 @@ class CustomLoader extends StatelessWidget {
 
 class NoDataLoader extends StatelessWidget {
   const NoDataLoader({
-    Key? key,
+    super.key,
     this.isCenter = true,
     this.size = .4,
-  }) : super(key: key);
+  });
   final bool isCenter;
   final double size;
 
@@ -49,11 +49,11 @@ class NoDataLoader extends StatelessWidget {
 
 class NetLoader extends StatelessWidget {
   const NetLoader({
-    Key? key,
+    super.key,
     this.isCenter = true,
     this.size = .4,
     this.buttonColor = KColors.kPrimary,
-  }) : super(key: key);
+  });
   final bool isCenter;
   final double size;
   final Color buttonColor;
@@ -85,12 +85,12 @@ class NetLoader extends StatelessWidget {
 
 class ErrorLoader extends StatelessWidget {
   const ErrorLoader({
-    Key? key,
+    super.key,
     this.isCenter = true,
     this.size = .4,
     required this.function,
     this.buttonColor = KColors.kPrimary,
-  }) : super(key: key);
+  });
   final bool isCenter;
   final double size;
   final Color buttonColor;
